@@ -1,13 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
-    <style> head {background-color: rgb(55, 76, 146);} </style>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mundo do Vôlei: Dicas, Regras e Fundamentos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e3d59;
+            color: #ff6e40;
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 5px solid #ffc107;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #1e3d59;
+            border-bottom: 2px solid #ffc107;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .media-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .media-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Estilos dos botões de Curtir e Descurtir */
+        .feedback-section {
+            text-align: center;
+            padding: 15px;
+            background-color: #eef2f5;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .btn-reaction {
+            background-color: #ffffff;
+            border: 2px solid #1e3d59;
+            color: #1e3d59;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-reaction:hover {
+            background-color: #1e3d59;
+            color: #ffffff;
+        }
+
+        .btn-like.active {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: #ffffff;
+        }
+
+        .btn-dislike.active {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1e3d59;
+            color: #ffffff;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>VOLÊI</h1>
-<P>Vou compartilhar conhecimentos sobre volêi</P>
+
+    <header>
+        <h1>Mundo do Vôlei</h1>
+        <p>Compartilhando conhecimentos, técnicas e a paixão pelo esporte</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Sobre o Esporte</h2>
+            <p>O voleibol é um esporte dinâmico praticado entre duas equipes em uma quadra dividida por uma rede. O objetivo principal é fazer a bola passar por cima da rede e tocar o chão do lado adversário.</p>
+            
+            <div class="media-container">
+                <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80" alt="Quadra de Vôlei">
+            </div>
+        </section>
+
+        <section>
+            <h2>Fundamentos Básicos</h2>
+            <p>Para jogar vôlei com eficiência, é essencial dominar os seis fundamentos principais:</p>
+            <ul>
+                <li><strong>Saque:</strong> O ponto de partida de cada jogada (por baixo, por cima ou viagem).</li>
+                <li><strong>Passe / Manchete:</strong> Técnica para recepcionar o saque ou defender um ataque.</li>
+                <li><strong>Levantamento:</strong> O toque de precisão que prepara a bola para o atacante.</li>
+                <li><strong>Ataque / Cortada:</strong> Ação ofensiva para enviar a bola com força ao chão adversário.</li>
+                <li><strong>Bloqueio:</strong> Primeira linha de defesa para deter o ataque da outra equipe.</li>
+                <li><strong>Defesa:</strong> Recuperação de bolas difíceis que passaram pelo bloqueio.</li>
+            </ul>
+
+            <div class="media-container">
+                <img src="https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=800&q=80" alt="Bola de Vôlei">
+            </div>
+        </section>
+
+        <section>
+            <h2>Regras Principais</h2>
+            <ul>
+                <li>Cada equipe tem direito a no máximo <strong>3 toques</strong> na bola antes de enviá-la ao outro lado.</li>
+                <li>Um mesmo jogador não pode dar dois toques consecutivos na bola.</li>
+                <li>As partidas são jogadas em sets de 25 pontos (com diferença mínima de 2 pontos).</li>
+                <li>É proibido tocar na rede durante a disputa do ponto.</li>
+            </ul>
+        </section>
+
+        <!-- Seção de Curtida e Descurtida -->
+        <section class="feedback-section">
+            <h3>Gostou do conteúdo?</h3>
+            <button class="btn-reaction btn-like" onclick="like()">
+                👍 Curtir (<span id="like-count">0</span>)
+            </button>
+            <button class="btn-reaction btn-dislike" onclick="dislike()">
+                👎 Descurtir (<span id="dislike-count">0</span>)
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Conteúdo sobre Vôlei — Desenvolvido para amantes do esporte.</p>
+    </footer>
+
+    <!-- Lógica de interação dos botões -->
+    <script>
+        let likes = 0;
+        let dislikes = 0;
+
+        function like() {
+            likes++;
+            document.getElementById("like-count").innerText = likes;
+        }
+
+        function dislike() {
+            dislikes++;
+            document.getElementById("dislike-count").innerText = dislikes;
+        }
+    </script>
+
 </body>
 </html>
